@@ -15,15 +15,48 @@
         <span><button type="button" class="btn-header">Log in</button></span>
       </nav>
       <div>
-        <button type="button" class="btn-header add">+ Add book</button>
+        <button type="button" class="btn-header add" data-add-btn>
+          + Add book
+        </button>
+        <div class="modal" id="modal">
+          <div class="modal-header">
+            <span>Book details:</span>
+            <span class="close-btn" data-close-btn>&times;</span>
+          </div>
+          <form action="#">
+            <div>
+              <label for="title">Title: </label>
+              <input type="text" name="title" id="title" />
+            </div>
+            <div>
+              <label for="author">Author: </label>
+              <input type="text" name="author" id="author" />
+            </div>
+            <div>
+              <label for="pages">Pages: </label>
+              <input type="number" name="pages" id="pages" />
+            </div>
+            <div>
+              <label for="status">Read: </label>
+              <input type="checkbox" name="status" id="status" />
+            </div>
+          </form>
+          <div class="modal-btns">
+            <button type="button" class="btn modal-button">ADD</button>
+            <button type="button" class="btn modal-button">CLEAR</button>
+          </div>
+        </div>
+        <div class="overlay"></div>
       </div>
       <section class="library-grid">
         <div class="card">
           <p class="title">It</p>
           <p class="author">Stephen King</p>
           <p class="pages"><span>700</span><span> pages</span></p>
-          <button class="not-read btn" type="button">Read</button>
-          <button class="remove btn" type="button">Remove</button>
+          <button class="not-read btn" type="button" data-read-btn>Read</button>
+          <button class="remove btn" type="button" data-remove-btn>
+            Remove
+          </button>
         </div>
       </section>
       <footer>https://github.com/CCMPacheco/</footer>
