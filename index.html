@@ -15,7 +15,7 @@
         <span><button type="button" class="btn-header">Log in</button></span>
       </nav>
       <div>
-        <button type="button" class="btn-header add" data-add-btn>
+        <button type="button" class="btn-header add" data-open-btn>
           + Add book
         </button>
         <div class="modal" id="modal">
@@ -42,23 +42,17 @@
             </div>
           </form>
           <div class="modal-btns">
-            <button type="button" class="btn modal-button">ADD</button>
-            <button type="button" class="btn modal-button">CLEAR</button>
+            <button type="button" class="btn modal-button" data-add-btn>
+              ADD
+            </button>
+            <button type="button" class="btn modal-button" data-clear-btn>
+              CLEAR
+            </button>
           </div>
         </div>
         <div class="overlay"></div>
       </div>
-      <section class="library-grid">
-        <div class="card">
-          <p class="title">It</p>
-          <p class="author">Stephen King</p>
-          <p class="pages"><span>700</span><span> pages</span></p>
-          <button class="not-read btn" type="button" data-read-btn>Read</button>
-          <button class="remove btn" type="button" data-remove-btn>
-            Remove
-          </button>
-        </div>
-      </section>
+      <section class="library-grid"></section>
       <footer>https://github.com/CCMPacheco/</footer>
     </div>
   </body>
