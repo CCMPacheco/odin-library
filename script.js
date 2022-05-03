@@ -1,17 +1,25 @@
-let myLibrary = [
-  {
-    title: "Classroom of the Elite",
-    author: "Shougo Kinugasa",
-    pages: "230",
-    readStatus: true,
-  },
-];
+class Library {
+  constructor() {
+    this.books = [
+      {
+        title: "Classroom of the Elite",
+        author: "Shougo Kinugasa",
+        pages: "230",
+        readStatus: true,
+      },
+    ];
+  }
+}
 
-function Book(title, author, pages, readStatus) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.readStatus = readStatus;
+const library = new Library();
+
+class Book {
+  constructor(title, author, pages, readStatus) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.readStatus = readStatus;
+  }
 }
 
 function createCard(newBook) {
@@ -57,14 +65,14 @@ function createCard(newBook) {
 }
 
 function displayLibrary() {
-  for (let book of myLibrary) {
+  for (let book of library.books) {
     createCard(book);
   }
 }
 
 function addBookToLibrary() {
   const newBook = getBookFromInput();
-  myLibrary.push(newBook);
+  library.books.push(newBook);
   createCard(newBook);
   closeModal();
 }
@@ -101,21 +109,21 @@ const read = (e) => {
     e.target.classList.add("not-read");
     e.target.textContent = `Not read`;
     const itemIndex = e.target.parentElement.firstChild.textContent;
-    const index = myLibrary.findIndex((book) => book.title === itemIndex);
-    myLibrary[index].readStatus = false;
+    const index = library.books.findIndex((book) => book.title === itemIndex);
+    library.books[index].readStatus = false;
   } else if (e.target.classList.contains("not-read")) {
     e.target.classList.remove("not-read");
     e.target.classList.add("read");
     e.target.textContent = `Read`;
     const itemIndex = e.target.parentElement.firstChild.textContent;
-    const index = myLibrary.findIndex((book) => book.title === itemIndex);
-    myLibrary[index].readStatus = true;
+    const index = library.books.findIndex((book) => book.title === itemIndex);
+    library.books[index].readStatus = true;
   }
 };
 
 const removeBook = (e) => {
   const removeItem = e.target.parentElement.firstChild.textContent;
-  myLibrary = myLibrary.filter((book) => book.title !== removeItem);
+  library.books = library.books.filter((book) => book.title !== removeItem);
   e.target.parentElement.remove();
 };
 
