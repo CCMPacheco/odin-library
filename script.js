@@ -71,6 +71,10 @@ function displayLibrary() {
 }
 
 function addBookToLibrary() {
+  if (title.value === "" || title.value === null) return;
+  if (author.value === "" || author.value === null) return;
+  if (pages.value === "" || pages.value === null || pages.value < 0) return;
+
   const newBook = getBookFromInput();
   library.books.push(newBook);
   createCard(newBook);
